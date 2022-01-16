@@ -39,6 +39,7 @@
                     const source = audioCtx.createBufferSource();
                     source.buffer = context.createBuffer(e.data, false);
                     source.start();
+                    console.log('source', source);
 
                 }
             })
