@@ -1,4 +1,4 @@
-<h1>POCKET REVERB 4</h1>
+<h1>POCKET REVERB 5</h1>
 
 <div id="buttons">
     <button class="record">Record</button>
@@ -37,7 +37,7 @@
                     const biquadFilter = audioCtx.createBiquadFilter();
                     biquadFilter.type = "lowshelf";
                     biquadFilter.frequency.value = 1000;
-                    biquadFilter.gain.value = range.value;
+                    biquadFilter.gain.value = 40;
                     // connect the AudioBufferSourceNode to the gainNode
                     // and the gainNode to the destination, so we can play the
                     // music and adjust the volume using the mouse cursor
