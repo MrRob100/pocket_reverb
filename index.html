@@ -1,4 +1,4 @@
-<h1>POCKET REVERB 1</h1>
+<h1>POCKET REVERB 2</h1>
 
 <div id="buttons">
     <button class="record">Record</button>
@@ -30,37 +30,37 @@
                     record.style.background = "red";
                     record.style.color = "black";
 
-                    // const microphone = audioCtx.createMediaStreamSource(stream);
-                    // const source = audioCtx.createMediaStreamSource(stream);
-                    //
-                    // // Create a biquadfilter
-                    // const biquadFilter = audioCtx.createBiquadFilter();
+                    const microphone = audioCtx.createMediaStreamSource(stream);
+                    const source = audioCtx.createMediaStreamSource(stream);
+
+                    // Create a biquadfilter
+                    const biquadFilter = audioCtx.createBiquadFilter();
                     // biquadFilter.type = "lowshelf";
                     // biquadFilter.frequency.value = 1000;
                     // biquadFilter.gain.value = 40;
-                    // // connect the AudioBufferSourceNode to the gainNode
-                    // // and the gainNode to the destination, so we can play the
-                    // // music and adjust the volume using the mouse cursor
-                    // source.connect(biquadFilter);
-                    // biquadFilter.connect(audioCtx.destination);
-                    //
-                    // console.log('src', source);
+                    // connect the AudioBufferSourceNode to the gainNode
+                    // and the gainNode to the destination, so we can play the
+                    // music and adjust the volume using the mouse cursor
+                    source.connect(biquadFilter);
+                    biquadFilter.connect(audioCtx.destination);
+
+                    console.log('src', source);
 
                     // source.start(); //source start is not a function
 
 
                     let chunks = [];
 
-                    mediaRecorder.ondataavailable = function(e) {
-                        chunks.push(e.data);
-                        //instead of pushing it to data, play it!
-                        const source = audioCtx.createBufferSource();
-                        source.buffer = context.createBuffer(e.data, false);
-                        source.start();
-                        console.log('source', source);
-
-                        console.log(chunks);
-                    }
+                    // mediaRecorder.ondataavailable = function(e) {
+                    //     chunks.push(e.data);
+                    //     //instead of pushing it to data, play it!
+                    //     const source = audioCtx.createBufferSource();
+                    //     source.buffer = context.createBuffer(e.data, false);
+                    //     source.start();
+                    //     console.log('source', source);
+                    //
+                    //     console.log(chunks);
+                    // }
 
 
                 }
