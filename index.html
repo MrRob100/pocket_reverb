@@ -1,4 +1,4 @@
-<h1>POCKET REVERB 3</h1>
+<h1>POCKET REVERB 4</h1>
 
 <div id="buttons">
     <button class="record">Record</button>
@@ -18,19 +18,17 @@
 
             // Success callback
             .then(function(stream) {
-                const mediaRecorder = new MediaRecorder(stream);
+                // const mediaRecorder = new MediaRecorder(stream);
                 record.onclick = function() {
 
                     const AudioContext = window.AudioContext || window.webkitAudioContext;
                     const audioCtx = new AudioContext();
 
-                    mediaRecorder.start();
-                    console.log(mediaRecorder.state);
+                    // mediaRecorder.start();
                     console.log("recorder started");
                     record.style.background = "red";
                     record.style.color = "black";
 
-                    const microphone = audioCtx.createMediaStreamSource(stream);
                     const source = audioCtx.createMediaStreamSource(stream);
 
                     // Create a biquadfilter
