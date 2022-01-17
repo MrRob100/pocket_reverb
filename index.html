@@ -30,10 +30,9 @@
                     record.style.background = "red";
                     record.style.color = "black";
 
-
-
                     // const microphone = audioCtx.createMediaStreamSource(stream);
                     const source = audioCtx.createMediaStreamSource(stream);
+
                     // Create a biquadfilter
                     const biquadFilter = audioCtx.createBiquadFilter();
                     biquadFilter.type = "lowshelf";
@@ -44,6 +43,8 @@
                     // music and adjust the volume using the mouse cursor
                     source.connect(biquadFilter);
                     biquadFilter.connect(audioCtx.destination);
+
+                    console.log('src', source);
 
                     source.start();
                 }
